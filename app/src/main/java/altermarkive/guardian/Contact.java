@@ -63,14 +63,14 @@ public class Contact extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contact);
-        EditText edit = (EditText) findViewById(R.id.contact);
+        EditText edit = findViewById(R.id.contact);
         edit.setText(get(this));
         Button button;
-        button = (Button) findViewById(R.id.search);
+        button = findViewById(R.id.search);
         button.setOnClickListener(this);
-        button = (Button) findViewById(R.id.ok);
+        button = findViewById(R.id.ok);
         button.setOnClickListener(this);
-        button = (Button) findViewById(R.id.cancel);
+        button = findViewById(R.id.cancel);
         button.setOnClickListener(this);
     }
 
@@ -83,7 +83,7 @@ public class Contact extends Activity implements View.OnClickListener {
                 startActivityForResult(intent, 0);
                 break;
             case R.id.ok:
-                EditText edit = (EditText) findViewById(R.id.contact);
+                EditText edit = findViewById(R.id.contact);
                 String phone = edit.getText().toString();
                 set(this, phone);
             case R.id.cancel:
@@ -107,7 +107,7 @@ public class Contact extends Activity implements View.OnClickListener {
             if (cursor.moveToFirst()) {
                 String phone = cursor.getString(index);
                 set(this, phone);
-                EditText edit = (EditText) findViewById(R.id.contact);
+                EditText edit = findViewById(R.id.contact);
                 edit.setText(phone);
             }
             cursor.close();

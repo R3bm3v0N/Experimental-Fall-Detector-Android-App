@@ -40,9 +40,9 @@ public class About extends Activity implements View.OnClickListener {
         final Dialog dialog = new Dialog(context);
         dialog.setContentView(R.layout.eula);
         dialog.setTitle("EULA");
-        WebView web = (WebView) dialog.findViewById(R.id.eula);
+        WebView web = dialog.findViewById(R.id.eula);
         web.loadUrl("file:///android_asset/eula.html");
-        Button accept = (Button) dialog.findViewById(R.id.accept);
+        Button accept = dialog.findViewById(R.id.accept);
         accept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,13 +57,13 @@ public class About extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         Detector.initiate(this);
         setContentView(R.layout.about);
-        WebView web = (WebView) findViewById(R.id.about);
+        WebView web = findViewById(R.id.about);
         web.loadUrl("file:///android_asset/about.html");
-        Button help = (Button) findViewById(R.id.help);
+        Button help = findViewById(R.id.help);
         help.setOnClickListener(this);
-        Button settings = (Button) findViewById(R.id.settings);
+        Button settings = findViewById(R.id.settings);
         settings.setOnClickListener(this);
-        Button signals = (Button) findViewById(R.id.signals);
+        Button signals = findViewById(R.id.signals);
         signals.setOnClickListener(this);
         eula(this);
     }
